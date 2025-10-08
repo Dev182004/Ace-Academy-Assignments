@@ -1,3 +1,8 @@
+/* 
+@filename - MyString.java
+@description - This will perform most of the string operations
+@author - Divyansh Tak
+*/
 
 import java.util.*;
 
