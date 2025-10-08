@@ -69,17 +69,11 @@ public class Main {
                     System.out.println("Result: " + str.slice(start, len));
                     break;
                 case 6:
-                    String[] words = str.split();
-                    System.out.println("Words:");
-                    System.out.print("[");
-                    for(int i=0;i<words.length;i++){
-                        System.out.print(words[i]+ ",");
-                       
-                    }
-                     System.out.print("]");
+                    ArrayList<String> list = str.split();
+                     System.out.print(list);
                     break;
                 case 7:
-                    System.out.println("Max repeating character: " + str.maxRepeat());
+                    System.out.print(str.maxRepeat());
                     break;
                 case 8:
                     System.out.println("Sorted string: " + str.sort());
@@ -235,16 +229,16 @@ class MyString{
     }
 
 // string words converted into array
-    String[] split(){
+    ArrayList<String> split(){
 
-        int n = countWords();
-        String arr[] = new String[n];
+        
+        ArrayList<String> list= new ArrayList<>();
 
         int idx=0, idx2=0, i=0 ;
       
         while(idx<currentString.length()){
             if(currentString.charAt(idx)==' '){
-                arr[i] = substr(idx2,idx); // store words in array
+                list.add(substr(idx2,idx)); // store words in array
                  i++;
                  while(idx < currentString.length() && currentString.charAt(idx) == ' ') {  // removing spaces from start and end
                     idx++;
@@ -255,15 +249,15 @@ class MyString{
         }
 
         if(idx2 < currentString.length()) {
-           arr[i] = substr(idx2, idx);
+           list.add(substr(idx2, idx));
           }
        
-       return arr;
+       return list;
 
     }
 
 // Max occuring character
-   char maxRepeat() {
+   int maxRepeat() {
    
     int[] freq = new int[256];
 
@@ -284,8 +278,8 @@ class MyString{
             maxChar = (char)i;
         }
     }
-
-    return maxChar;
+    System.out.print("Max Repeating Char : " + maxChar+ " -> ");
+    return maxCount;
   }
 
 
