@@ -1,2 +1,2 @@
 # Ace-Academy-Assignments
-Created a Console Based Cricket Game.
+Created a Console Based Cricket Game
